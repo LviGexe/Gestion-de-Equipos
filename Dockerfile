@@ -1,22 +1,12 @@
-# Imagen base de Snipe-IT
+# Usa la imagen oficial de Snipe-IT
 FROM snipe/snipe-it:latest
 
-# Variables de entorno (puedes configurarlas luego en Northflank)
-ENV APP_ENV=production \
-    APP_DEBUG=false \
-    APP_URL=http://localhost \
-    DB_CONNECTION=mysql \
-    DB_HOST=db \
-    DB_PORT=3306 \
-    DB_DATABASE=${DB_DATABASE} \
-    DB_USERNAME=${DB_USERNAME} \
-    DB_PASSWORD=${DB_PASSWORD}
-
-# Exponer el puerto del contenedor
+# Define el puerto (según tu .env)
 EXPOSE 80
 
-# Directorio de trabajo
-WORKDIR /var/www/html
+# Copia las variables de entorno si existen
+COPY .env /var/www/html/.env
 
-# Comando por defecto (mantiene el contenedor corriendo)
+# Comando de arranque de Snipe-IT (Laravel)
 CMD ["apache2-foreground"]
+
