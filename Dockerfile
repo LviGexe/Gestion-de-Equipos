@@ -1,18 +1,20 @@
-# Usa la imagen oficial de Snipe-IT
+# Imagen base oficial de Snipe-IT
 FROM snipe/snipe-it:latest
 
-# Copia tu archivo de entorno
-COPY .env /var/www/html/.env
-
-# Define el directorio de trabajo
+# Establecemos el directorio de trabajo
 WORKDIR /var/www/html
 
-# Expone el puerto HTTP
+# Copiamos los archivos del proyecto
+COPY . .
+
+# Copiamos el archivo de entorno
+COPY .env /var/www/html/.env
+
+# Aseguramos permisos correctos
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Exponemos el puerto correcto
 EXPOSE 80
 
-# Usa el entrypoint correcto de la imagen
-ENTRYPOINT ["/entrypoint.sh"]
-
-# Inicia Apache
+# Comando para iniciar Apache (Snipe-IT usa Apache)
 CMD ["apache2-foreground"]
-
