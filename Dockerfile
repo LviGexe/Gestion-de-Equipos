@@ -5,7 +5,7 @@ FROM php:8.2-apache
 RUN apt-get update && apt-get install -y \
     unzip git curl libpng-dev libjpeg-dev libfreetype6-dev libzip-dev zip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo pdo_mysql gd zip \
+    && docker-php-ext-install pdo pdo_mysql gd zip exif \
     && a2enmod rewrite
 
 # Configura el directorio de trabajo
