@@ -1,12 +1,18 @@
 # Usa la imagen oficial de Snipe-IT
 FROM snipe/snipe-it:latest
 
-# Define el puerto (según tu .env)
-EXPOSE 80
-
-# Copia las variables de entorno si existen
+# Copia tu archivo de entorno
 COPY .env /var/www/html/.env
 
-# Comando de arranque de Snipe-IT (Laravel)
+# Define el directorio de trabajo
+WORKDIR /var/www/html
+
+# Expone el puerto HTTP
+EXPOSE 80
+
+# Usa el entrypoint correcto de la imagen
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Inicia Apache
 CMD ["apache2-foreground"]
 
