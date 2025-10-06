@@ -17,7 +17,6 @@
     "spatie/laravel-medialibrary": "^10.0",
     "spatie/laravel-sluggable": "^3.0",
     "spatie/laravel-query-builder": "^5.0",
-    "spatie/laravel-analytics": "^3.0",
     "spatie/laravel-html": "^2.0",
     "spatie/laravel-ignition": "^2.0",
     "spatie/laravel-sitemap": "^6.0",
