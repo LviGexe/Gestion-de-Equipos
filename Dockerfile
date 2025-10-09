@@ -44,6 +44,8 @@ php8.3-dev \
 ca-certificates \
 unzip \
 dnsutils \
+php8.3-pgsql \
+libpq-dev \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
