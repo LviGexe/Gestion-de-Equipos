@@ -99,7 +99,7 @@ return [
     |
     */
 
-    'locale' =>  env('APP_LOCALE', 'en-US'),
+    'locale' =>  env('APP_LOCALE', 'es-ES'),
 
     /*
     |--------------------------------------------------------------------------
@@ -112,7 +112,7 @@ return [
     |
     */
 
-    'fallback_locale' => env('FALLBACK_APP_LOCALE', 'en-US'),
+    'fallback_locale' => env('FALLBACK_APP_LOCALE', 'es-ES'),
 
     /*
     |--------------------------------------------------------------------------
