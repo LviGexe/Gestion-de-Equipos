@@ -26,6 +26,12 @@ class CheckLocale
     public function handle($request, Closure $next, $guard = null)
     {
 
+        // FORCE SPANISH - Always use es-ES regardless of database settings
+        $language = 'es-ES';
+        
+        // Original logic commented out to force Spanish
+        // Uncomment below if you want to restore user/settings preferences
+        /*
         // Default app settings from config
         $language = config('app.locale');
         $this->warn_legacy_locale($language, "APP_LOCALE in .env is set to");
@@ -44,6 +50,7 @@ class CheckLocale
             }
 
         }
+        */
         
         app()->setLocale(Helper::mapLegacyLocale($language));
         return $next($request);
