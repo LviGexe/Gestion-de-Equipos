@@ -121,7 +121,7 @@ then
 fi
 
 php artisan migrate --force
-php scripts/fix_locale_in_db.php
+php artisan locale:force-spanish --force
 php artisan config:clear
 php artisan config:cache
 
